@@ -7,7 +7,7 @@ use Pod::Usage;
 use Path::Class qw/dir file/;
 use IO::File;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub run {
     my ($class, @argv) = @_;
@@ -36,6 +36,7 @@ sub _process {
         'f|file=s'     => \$config{file},
         'a|age=i'      => \$config{age},
         'i|interval=i' => \$config{interval},
+        't|through'    => \$config{through},
         'h|help'       => sub {
             pod2usage(1);
         },
@@ -98,6 +99,7 @@ sub _roll {
                         or croak "could't open log: $config{file}\.$now_suffix";
             $fh->print($line);
             undef $fh;
+            print $line if $config{through};
         }
     }
 }

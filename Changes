@@ -1,4 +1,9 @@
 Revision history for Perl extension App::Rolling
 
+0.02    19:38 2011/11/25
+        New Feature: --through option is through stream to STDIN
+        fixed dependancy modules
+        fixed Pod
+
 0.01    Mon Nov 21 19:51:13 2011
         - original version

@@ -12,6 +12,10 @@ my $builder = Module::Build->new(
     },
     requires => {
         'Carp' => 0,
+        'Getopt::Long' => 0,
+        'Pod::Usage' => 0,
+        'Path::Class' => 0,
+        'IO::File' => 0,
     },
     add_to_cleanup      => [ 'App-Rolling-*' ],
     meta_merge     => {

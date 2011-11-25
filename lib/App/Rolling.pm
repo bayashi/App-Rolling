@@ -7,7 +7,7 @@ use Pod::Usage;
 use Path::Class qw/dir file/;
 use IO::File;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 sub run {
     my ($class, @argv) = @_;
@@ -37,6 +37,7 @@ sub _process {
         'a|age=i'      => \$config{age},
         'i|interval=i' => \$config{interval},
         't|through'    => \$config{through},
+        'nr|no-rotate' => \$config{no_rotate},
         'h|help'       => sub {
             pod2usage(1);
         },
@@ -90,13 +91,16 @@ sub _roll {
 
     if (!-t STDIN) {
         while ( my $line = <STDIN> ) {
-            my $now_suffix = int(time / $config{interval});
-            my $old_suffix = $now_suffix - $config{age};
-            if (-e "$config{file}\.$old_suffix") {
-                unlink "$config{file}\.$old_suffix";
+            my $age_id = int(time / $config{interval});
+            my $now_suffix = $config{no_rotate} ? '' : '.' . $age_id;
+            if (!$config{no_rotate} && $config{age}) {
+                my $old_suffix = $age_id - $config{age};
+                if (-e "$config{file}\.$old_suffix") {
+                    unlink "$config{file}\.$old_suffix";
+                }
             }
-            my $fh = IO::File->new("$config{file}\.$now_suffix", '>>')
-                        or croak "could't open log: $config{file}\.$now_suffix";
+            my $fh = IO::File->new("$config{file}$now_suffix", '>>')
+                        or croak "could't open log: $config{file}$now_suffix";
             $fh->print($line);
             undef $fh;
             print $line if $config{through};

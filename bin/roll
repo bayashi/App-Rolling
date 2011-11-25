@@ -1,0 +1,44 @@
+#!perl -w
+use strict;
+use warnings;
+use App::Rolling;
+
+App::Rolling->run(@ARGV);
+
+__END__
+
+=encoding UTF-8
+
+=head1 NAME
+
+roll - rotates, output file
+
+
+=head1 SYNOPSIS
+
+/usr/sbin/tcpdump | roll -f /tmp/dump -a 10 -i 10
+
+Options:
+
+    -f --file        write file path
+    -a --age         rotate ages
+    -i --interval    file rolling interval
+
+
+=head1 AUTHOR
+
+Dai Okabayashi E<lt>bayashi@cpan.orgE<gt>
+
+
+=head1 SEE ALSO
+
+L<App::Rolling>
+
+
+=head1 LICENSE
+
+This module is free software; you can redistribute it and/or
+modify it under the same terms as Perl itself. See L<perlartistic>.
+
+
+=cut

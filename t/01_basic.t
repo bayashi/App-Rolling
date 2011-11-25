@@ -4,7 +4,7 @@ use Test::More 0.88;
 
 use App::Rolling;
 
-can_ok 'App::Rolling', qw/new/;
+can_ok 'App::Rolling', qw/run/;
 
 # write more tests
 

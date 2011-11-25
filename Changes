@@ -1,5 +1,9 @@
 Revision history for Perl extension App::Rolling
 
+0.04    20:28 2011/11/25
+        fixed Pod
+        fixed test
+
 0.03    20:09 2011/11/25
         New Feature: --no-rotate set, never rotate files
 

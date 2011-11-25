@@ -7,7 +7,7 @@ use Pod::Usage;
 use Path::Class qw/dir file/;
 use IO::File;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 sub run {
     my ($class, @argv) = @_;

@@ -21,9 +21,10 @@ roll - rotate input stream into pieces automatically, and write down to file
 Options:
 
     -f --file        write file path *require*
-    -a --age         rotate ages
-    -i --interval    file rolling interval
+    -a --age         number of rotate age [default:5]
+    -i --interval    file rolling interval(sec) [default:60]
     -t --through     write down and through STDIN
+    -nr --no-rotate  never rotate output
     -v --version     show version
     -h --help        show help
 

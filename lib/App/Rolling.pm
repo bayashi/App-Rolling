@@ -47,6 +47,8 @@ sub _process {
         },
     ) or pod2usage(2);
 
+    $config{file} = shift @argv unless $config{file};
+
     croak "[ERROR] specify file" unless $config{file};
     $config{age}      = 5  unless $config{age};
     $config{interval} = 60 unless $config{interval};

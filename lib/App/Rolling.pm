@@ -61,8 +61,8 @@ sub _config_read {
 
     return unless -e $filename;
 
-    open my $fh, '<', $filename
-        or croak "[ERROR] couldn't open config file $filename: $!\n";
+    my $fh = IO::File->new($filename, '<')
+        or croak "[ERROR] couldn't open config file $filename: $!";
 
     my %config;
     while (<$fh>) {
@@ -70,6 +70,8 @@ sub _config_read {
         next if /\A\s*\Z/sm;
         if (/\A(\w+):\s*(.+)\Z/sm) { $config{$1} = $2; }
     }
+
+    undef $fh;
 
     return %config;
 }
@@ -99,8 +101,9 @@ sub _roll {
                     unlink "$config{file}\.$old_suffix";
                 }
             }
-            my $fh = IO::File->new("$config{file}$now_suffix", '>>')
-                        or croak "could't open log: $config{file}$now_suffix";
+            my $file = "$config{file}$now_suffix";
+            my $fh = IO::File->new($file, '>>')
+                        or croak "[ERROR] could't open file $file: $!";
             $fh->print($line);
             undef $fh;
             print $line if $config{through};

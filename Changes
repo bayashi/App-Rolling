@@ -1,5 +1,8 @@
 Revision history for Perl extension App::Rolling
 
+0.06    10:25 2011/11/26
+        default arg is the target file. you do not need specify -f option.
+
 0.05    10:11 2011/11/26
         added Pod on App::Rolling
         tiny fixes about reading file.

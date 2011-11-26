@@ -6,6 +6,7 @@ use Getopt::Long qw/GetOptionsFromArray/;
 use Pod::Usage;
 use Path::Class qw/dir file/;
 use IO::File;
+use IO::Interactive qw/is_interactive/;
 
 our $VERSION = '0.06';
 
@@ -93,7 +94,7 @@ sub _config_file {
 sub _roll {
     my ($self, %config) = @_;
 
-    if (!-t STDIN) {
+    if ( !is_interactive() ) {
         while ( my $line = <STDIN> ) {
             my $age_id = int(time / $config{interval});
             my $now_suffix = $config{no_rotate} ? '' : '.' . $age_id;

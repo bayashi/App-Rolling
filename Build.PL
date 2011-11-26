@@ -16,6 +16,7 @@ my $builder = Module::Build->new(
         'Pod::Usage' => 0,
         'Path::Class' => 0,
         'IO::File' => 0,
+        'IO::Interactive' => 0,
     },
     add_to_cleanup      => [ 'App-Rolling-*' ],
     meta_merge     => {

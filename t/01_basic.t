@@ -6,6 +6,4 @@ use App::Rolling;
 
 can_ok 'App::Rolling', qw/run/;
 
-# write more tests
-
 done_testing;

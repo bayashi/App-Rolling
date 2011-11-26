@@ -9,6 +9,10 @@ my $builder = Module::Build->new(
     dist_version_from   => 'lib/App/Rolling.pm',
     build_requires      => {
         'Test::More' => 0.88,
+        'File::Basename' => 0,
+        'File::Spec' => 0,
+        'IO::Dir' => 0,
+        'File::Path' => 0,
     },
     requires => {
         'Carp' => 0,

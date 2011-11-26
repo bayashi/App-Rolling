@@ -40,7 +40,7 @@ sub _process {
         't|through'    => \$config{through},
         'nr|no-rotate' => \$config{no_rotate},
         'h|help'       => sub {
-            pod2usage(1);
+            pod2usage(2);
         },
         'v|version'     => sub {
             print "roll v$App::Rolling::VERSION\n";

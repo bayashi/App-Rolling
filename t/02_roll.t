@@ -27,7 +27,9 @@ mk_testdir();
         outdir().'/foo',
     ;
     is $?, 0, 'foo';
-    is exists_file(outdir(), qr/foo\.\d+/), 1, 'file exists';
+    my $file = exists_file(outdir(), qr/foo\.\d+/);
+    is( (defined $file), 1, 'file exists' );
+    is slurp($file), "1\n2\n3\n4\n5\n", 'content';
     restore_stdin();
 }
 
@@ -39,7 +41,9 @@ mk_testdir();
         sprintf('--file=%s/bar', outdir()),
     ;
     is $?, 0, "--file";
-    is exists_file(outdir(), qr/bar\.\d+/), 1, 'file exists';
+    my $file = exists_file(outdir(), qr/bar\.\d+/);
+    is( (defined $file), 1, 'file exists' );
+    is slurp($file), "1\n2\n3\n4\n5\n", 'content';
     restore_stdin();
 }
 {
@@ -50,7 +54,9 @@ mk_testdir();
         sprintf('-f=%s/baz', outdir()),
     ;
     is $?, 0, "-f";
-    is exists_file(outdir(), qr/baz\.\d+/), 1, 'file exists';
+    my $file = exists_file(outdir(), qr/baz\.\d+/);
+    is( (defined $file), 1, 'file exists' );
+    is slurp($file), "1\n2\n3\n4\n5\n", 'content';
     restore_stdin();
 }
 

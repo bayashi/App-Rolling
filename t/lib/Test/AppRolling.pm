@@ -3,11 +3,15 @@ use strict;
 use warnings;
 use Carp qw/croak/;
 use parent 'Exporter';
-our @EXPORT = qw/open_words_txt_as_stdin restore_stdin exists_file/;
+our @EXPORT = qw/
+    open_words_txt_as_stdin restore_stdin
+    exists_file slurp
+/;
 
 use File::Basename;
 use File::Spec;
 use IO::Dir;
+use IO::File;
 
 my $REAL_STDIN;
 
@@ -41,10 +45,19 @@ sub exists_file {
     my $d = IO::Dir->new($dir) or croak $!;
     if (defined $d) {
         while ( my $file = $d->read ) {
-            return 1 if $file && $file =~ m!$regex!;
+            return "$dir/$file" if $file && $file =~ m!$regex!;
         }
     }
     return; # not exists
+}
+
+sub slurp {
+    my ($file) = shift;
+
+    my $fh = IO::File->new($file, 'r') or croak $!;
+    my $content = join '', $fh->getlines;
+    undef $fh;
+    return $content;
 }
 
 1;

@@ -16,7 +16,7 @@ roll - rotate input stream into pieces automatically, and write down to file
 
 =head1 SYNOPSIS
 
-/usr/sbin/tcpdump | roll -f /tmp/dump
+    $ /usr/sbin/tcpdump | roll -f /tmp/dump
 
 Options:
 

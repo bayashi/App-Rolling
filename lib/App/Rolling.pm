@@ -112,19 +112,28 @@ sub _roll {
 
 __END__
 
+=encoding UTF-8
+
 =head1 NAME
 
-App::Rolling - one line description
+App::Rolling - rotate input stream into pieces automatically
 
 
 =head1 SYNOPSIS
 
     use App::Rolling;
+    App::Rolling->run(@ARGV);
 
 
 =head1 DESCRIPTION
 
-App::Rolling is
+App::Rolling is the module for rotating input stream into pieces automatically.
+you can use L<roll> command.
+
+Example:
+    $ /usr/sbin/tcpdump | roll -f /tmp/dump
+
+see more documents about L<roll>.
 
 
 =head1 REPOSITORY
@@ -136,6 +145,11 @@ App::Rolling is hosted on github
 =head1 AUTHOR
 
 Dai Okabayashi E<lt>bayashi@cpan.orgE<gt>
+
+
+=head1 SEE ALSO
+
+L<roll>
 
 
 =head1 LICENSE

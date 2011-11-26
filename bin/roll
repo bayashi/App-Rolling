@@ -16,6 +16,10 @@ roll - rotate input stream into pieces automatically, and write down to file
 
 =head1 SYNOPSIS
 
+    $ roll [option]
+
+Example:
+
     $ /usr/sbin/tcpdump | roll -f /tmp/dump
 
 Options:
@@ -25,6 +29,7 @@ Options:
     -i --interval    file rolling interval(sec) [default:60]
     -t --through     write down and through STDIN
     -nr --no-rotate  never rotate output
+
     -v --version     show version
     -h --help        show help
 

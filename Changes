@@ -1,5 +1,8 @@
 Revision history for Perl extension App::Rolling
 
+0.09    2:54 2011/11/27
+        fixed up tests
+
 0.081   22:29 2011/11/26
         fixed Pod
 

@@ -8,7 +8,7 @@ use Path::Class qw/dir file/;
 use IO::File;
 use IO::Interactive qw/is_interactive/;
 
-our $VERSION = '0.081';
+our $VERSION = '0.09';
 
 sub run {
     my ($class, @argv) = @_;

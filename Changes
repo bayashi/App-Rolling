@@ -1,5 +1,8 @@
 Revision history for Perl extension App::Rolling
 
+0.07    14:41 2011/11/26
+        Use IO::Interactive::is_interactive() instead of -t
+
 0.06    10:25 2011/11/26
         default arg is the target file. you do not need specify -f option.
 

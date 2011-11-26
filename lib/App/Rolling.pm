@@ -142,6 +142,13 @@ Example:
 see more documents about L<roll>.
 
 
+=head1 METHOD
+
+=head2 run(@args)
+
+start rolling
+
+
 =head1 REPOSITORY
 
 App::Rolling is hosted on github

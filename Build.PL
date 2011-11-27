@@ -13,6 +13,7 @@ my $builder = Module::Build->new(
         'File::Spec' => 0,
         'IO::Dir' => 0,
         'File::Path' => 0,
+        'Exporter' => 0,
     },
     requires => {
         'Carp' => 0,

@@ -3,6 +3,12 @@
 
 This is Perl module B<App::Rolling>.
 
+=begin html
+
+<a href="http://travis-ci.org/bayashi/App-Rolling"><img src="https://secure.travis-ci.org/bayashi/App-Rolling.png"/></a>
+
+=end html
+
 
 =head1 INSTALLATION
 

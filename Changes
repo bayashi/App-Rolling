@@ -1,5 +1,10 @@
 Revision history for Perl extension App::Rolling
 
+0.12    Sun Oct 14 15:15:00 JST 2012
+        NOTE: This version has no change in code.
+        fixed date format in Changes(https://metacpan.org/module/CPAN::Changes::Spec)
+        added perl version for META.yml
+
 0.11    Thu Dec 01 23:14:00 JST 2011
         fixed version of dependency modules
 

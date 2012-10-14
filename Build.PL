@@ -17,6 +17,7 @@ my $builder = Module::Build->new(
         'Exporter' => 0,
     },
     requires => {
+        'perl' => '5.8.1',
         'Carp' => 0,
         'Getopt::Long' => 2.38,
         'Pod::Usage' => 0,

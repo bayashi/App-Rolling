@@ -1,42 +1,42 @@
 Revision history for Perl extension App::Rolling
 
-0.11    23:14 2011/12/01
+0.11    Thu Dec 01 23:14:00 JST 2011
         fixed version of dependency modules
 
-0.10    17:58 2011/11/27
+0.10    Sun Nov 27 17:58:00 JST 2011
         added test
         fixed dependency
 
-0.09    2:54 2011/11/27
+0.09    Sun Nov 27 02:54:00 JST 2011
         fixed up tests
 
-0.081   22:29 2011/11/26
+0.081   Sat Nov 26 22:29:00 JST 2011
         fixed Pod
 
-0.08    22:16 2011/11/26
+0.08    Sat Nov 26 22:16:00 JST 2011
         added test for roll command
 
-0.07    14:41 2011/11/26
+0.07    Sat Nov 26 14:41:00 JST 2011
         Use IO::Interactive::is_interactive() instead of -t
 
-0.06    10:25 2011/11/26
+0.06    Sat Nov 26 10:25:00 JST 2011
         default arg is the target file. you do not need specify -f option.
 
-0.05    10:11 2011/11/26
+0.05    Sat Nov 26 10:11:00 JST 2011
         added Pod on App::Rolling
         tiny fixes about reading file.
 
-0.04    20:28 2011/11/25
+0.04    Fri Nov 25 20:28:00 JST 2011
         fixed Pod
         fixed test
 
-0.03    20:09 2011/11/25
+0.03    Fri Nov 25 20:09:00 JST 2011
         New Feature: --no-rotate set, never rotate files
 
-0.02    19:38 2011/11/25
+0.02    Fri Nov 25 19:38:00 JST 2011
         New Feature: --through option is through stream to STDIN
         fixed dependancy modules
         fixed Pod
 
-0.01    Mon Nov 21 19:51:13 2011
+0.01    Mon Nov 21 19:51:13 JST 2011
         - original version
